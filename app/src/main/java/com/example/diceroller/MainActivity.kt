@@ -35,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         val diceRoll = dice6.makeRoll();
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.text = diceRoll.toString()
+
+        val dice20 = Dice(20);
+        val diceRoll20 = dice20.makeRoll();
+        val resultTextView20: TextView = findViewById(R.id.textView2);
+        resultTextView20.text = diceRoll20.toString();
     }
 
 }
