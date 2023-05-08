@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
 //            ****** CALLING rollDice FUNCTION *****
             rollDice();
         }
+
+//        CALLING rollDice ON APP STARTUP
+        rollDice();
     }
 
     private fun rollDice() {
