@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
         val diceRoll = dice6.makeRoll();
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.visibility = View.INVISIBLE;
-        val diceImage: ImageView = findViewById(R.id.imageView);
+        val diceImage: ImageView = findViewById(R.id.imageView)
+
         val luckyNum = 4;
 
         when(diceRoll) {
@@ -57,6 +58,11 @@ class MainActivity : AppCompatActivity() {
 
             luckyNum -> resultTextView.visibility = View.VISIBLE;
         }
+        diceImage.animate().apply {
+            duration = 1000;
+            rotationYBy(360f)
+            rotationXBy(360f)
+        }.start();
 
 //        val dice20 = Dice(20);
 //        val diceRoll20 = dice20.makeRoll();
