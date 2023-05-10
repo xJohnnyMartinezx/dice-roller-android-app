@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
 //        CALLING rollDice ON APP STARTUP
         rollDice();
+
     }
 
     private fun rollDice() {
@@ -41,8 +42,13 @@ class MainActivity : AppCompatActivity() {
         val resultTextView: TextView = findViewById(R.id.textView)
         resultTextView.visibility = View.INVISIBLE;
         val diceImage: ImageView = findViewById(R.id.imageView)
-
         val luckyNum = 4;
+
+        diceImage.animate().apply {
+            duration = 1000;
+            rotationYBy(360f)
+            rotationXBy(360f)
+        }.start();
 
         when(diceRoll) {
 
@@ -57,21 +63,17 @@ class MainActivity : AppCompatActivity() {
         when(diceRoll) {
 
             luckyNum -> resultTextView.visibility = View.VISIBLE;
-        }
-        diceImage.animate().apply {
-            duration = 1000;
-            rotationYBy(360f)
-            rotationXBy(360f)
-        }.start();
 
+        }
 //        val dice20 = Dice(20);
 //        val diceRoll20 = dice20.makeRoll();
 //        val resultTextView20: TextView = findViewById(R.id.textView2);
 //        resultTextView20.text = diceRoll20.toString();
+//
+
     }
 
 }
-
 class Dice(private val numSides: Int){
     fun makeRoll(): Int{
         return (1..numSides).random();
